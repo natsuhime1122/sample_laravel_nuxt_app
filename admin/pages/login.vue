@@ -5,6 +5,7 @@
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
       <b-form-input
+        v-model="email"
         type="email"
         placeholder="Email address"
         required
@@ -12,6 +13,7 @@
       ></b-form-input>
 
       <b-form-input
+        v-model="password"
         type="password"
         placeholder="Password"
         required
@@ -19,6 +21,7 @@
 
       <div class="mb-3">
         <b-form-checkbox
+          v-model="rememberMe"
           :value="true"
           :unchecked-value="false"
         > Remember me</b-form-checkbox>
@@ -40,8 +43,11 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 
+@Component
 export default class Login extends Vue {
-
+  private email: string = '';
+  private password: string = '';
+  private rememberMe: boolean = false;
 }
 
 </script>
